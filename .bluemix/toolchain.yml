@@ -187,7 +187,7 @@ form:
       ui-repo_url: 'https://github.com/open-toolchain/Microservices_UI_helm'
       umbrella-repo_name: 'solution-{{timestamp}}'
       umbrella-repo_url: 'https://github.com/open-toolchain/Microservices_Solution_helm'
-   bitbucketgit:
+  bitbucketgit:
     parameters:
       catalog-api-repo_name: 'catalog-api-{{timestamp}}'
       catalog-api-repo_url: 'https://github.com/open-toolchain/Microservices_CatalogAPI_helm'
@@ -197,7 +197,7 @@ form:
       ui-repo_url: 'https://github.com/open-toolchain/Microservices_UI_helm'
       umbrella-repo_name: 'solution-{{timestamp}}'
       umbrella-repo_url: 'https://github.com/open-toolchain/Microservices_Solution_helm'
-   hostedgit:
+  hostedgit:
     parameters:
       catalog-api-repo_name: 'catalog-api-{{timestamp}}'
       catalog-api-repo_url: 'https://github.com/open-toolchain/Microservices_CatalogAPI_helm'

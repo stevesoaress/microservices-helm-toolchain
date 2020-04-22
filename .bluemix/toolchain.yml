@@ -63,8 +63,8 @@ services:
   umbrella-repo_github:
     service_id: githubconsolidated
     parameters:
-      repo_name: '{{form.gitlab.parameters.umbrella-repo_name}}'
-      repo_url: '{{form.gitlab.parameters.umbrella-repo_url}}'
+      repo_name: '{{form.githubconsolidated.parameters.umbrella-repo_name}}'
+      repo_url: '{{form.githubconsolidated.parameters.umbrella-repo_url}}'
       type: clone
       has_issues: true
       enable_traceability: true

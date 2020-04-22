@@ -25,7 +25,7 @@ toolchain:
   name: 'helm-microservices-{{timestamp}}'
 services:
   catalog-api-repo:
-    service_id: hostedgit
+    service_id: github
     parameters:
       repo_name: '{{form.hostedgit.parameters.catalog-api-repo_name}}'
       repo_url: '{{form.hostedgit.parameters.catalog-api-repo_url}}'
@@ -33,7 +33,7 @@ services:
       has_issues: false
       enable_traceability: true
   orders-api-repo:
-    service_id: hostedgit
+    service_id: github
     parameters:
       repo_name: '{{form.hostedgit.parameters.orders-api-repo_name}}'
       repo_url: '{{form.hostedgit.parameters.orders-api-repo_url}}'
@@ -41,7 +41,7 @@ services:
       has_issues: false
       enable_traceability: true
   ui-repo:
-    service_id: hostedgit
+    service_id: github
     parameters:
       repo_name: '{{form.hostedgit.parameters.ui-repo_name}}'
       repo_url: '{{form.hostedgit.parameters.ui-repo_url}}'
@@ -49,7 +49,7 @@ services:
       has_issues: false
       enable_traceability: true
   umbrella-repo:
-    service_id: hostedgit
+    service_id: github
     parameters:
       repo_name: '{{form.hostedgit.parameters.umbrella-repo_name}}'
       repo_url: '{{form.hostedgit.parameters.umbrella-repo_url}}'

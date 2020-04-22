@@ -13,18 +13,21 @@ template:
     - orders-api-repo_github
     - ui-repo_github
     - umbrella-repo_github
+    
     - catalog-api-repo_gitlab
     - orders-api-repo_gitlab
     - ui-repo_gitlab
     - umbrella-repo_gitlab
+    
     - catalog-api-repo_hostedgit
     - orders-api-repo_hostedgit
     - ui-repo_hostedgit
-    - umbrella-hostedgit
+    - umbrella-repo_hostedgit
+    
     - catalog-api-repo_bitbucketgit
     - orders-api-repo_bitbucketgit
     - ui-repo_bitbucketgit
-    - umbrella-bitbucketgit
+    - umbrella-repo_bitbucketgit
   info:
     git url: >-
       [https://github.com/open-toolchain/microservices-helm-toolchain](https://github.com/open-toolchain/microservices-helm-toolchain)

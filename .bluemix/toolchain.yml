@@ -9,10 +9,6 @@ template:
   header: '![](toolchain.svg?localize)'
   icon: icon.svg
   required:
-    - ui-build
-    - catalog-api-build
-    - orders-api-build
-    - umbrella-build
     - catalog-api-repo
     - orders-api-repo
     - ui-repo
@@ -60,44 +56,6 @@ services:
       type: clone
       has_issues: true
       enable_traceability: true
-  
-  alerting:
-    service_id: pagerduty
-  dra:
-    service_id: draservicebroker
-    $ref: dra.yml
-  messaging:
-    service_id: slack
-  test:
-    service_id: saucelabs
-  webide:
-    service_id: orion
-  registry:
-    service_id: customtool
-    parameters:
-      type: Container Registry
-      lifecyclePhase: "DELIVER"
-      imageUrl:
-        $ref: registry-logo.svg
-        $refType: image-data-uri
-      documentationUrl: https://cloud.ibm.com/docs/services/Registry/index.html
-      name: Private repositories
-      dashboard_url: https://cloud.ibm.com/containers-kubernetes/registry/private
-      description: Manage your Docker images in private container registry
-      additional-properties:    
-  clusters:
-    service_id: customtool
-    parameters:
-      type: Container Service
-      lifecyclePhase: "RUN"
-      imageUrl:
-        $ref: container-service-logo.svg
-        $refType: image-data-uri
-      documentationUrl: https://cloud.ibm.com/docs/containers/container_index.html
-      name: Clusters
-      dashboard_url: https://cloud.ibm.com/containers-kubernetes/clusters
-      description: Manage clusters
-      additional-properties:  
 form:
   hostedgit:
     parameters:

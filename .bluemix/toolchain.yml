@@ -28,6 +28,11 @@ template:
     - orders-api-repo_bitbucketgit
     - ui-repo_bitbucketgit
     - umbrella-repo_bitbucketgit
+
+    - catalog-api-repo_bitbucketgit_server
+    - orders-api-repo_bitbucketgit_server
+    - ui-repo_bitbucketgit_server
+    - umbrella-repo_bitbucketgit_server
   info:
     git url: >-
       [https://github.com/open-toolchain/microservices-helm-toolchain](https://github.com/open-toolchain/microservices-helm-toolchain)
@@ -164,6 +169,42 @@ services:
     parameters:
       repo_name: '{{form.hostedgit.parameters.umbrella-repo_name}}'
       repo_url: '{{form.hostedgit.parameters.umbrella-repo_url}}'
+      type: clone
+      has_issues: true
+      enable_traceability: true
+  catalog-api-repo_bitbucketgit_server:
+    service_id: bitbucketgit
+    parameters:
+      git_id: d948f40f-ee56-414e-994d-f2cba31878b3
+      repo_name: '{{form.bitbucketgit.parameters.catalog-api-repo_name}}'
+      repo_url: '{{form.bitbucketgit.parameters.catalog-api-repo_url}}'
+      type: clone
+      has_issues: false
+      enable_traceability: true
+  orders-api-repo_bitbucketgit_server:
+    service_id: bitbucketgit
+    parameters:
+      git_id: d948f40f-ee56-414e-994d-f2cba31878b3
+      repo_name: '{{form.bitbucketgit.parameters.orders-api-repo_name}}'
+      repo_url: '{{form.bitbucketgit.parameters.orders-api-repo_url}}'
+      type: clone
+      has_issues: false
+      enable_traceability: true
+  ui-repo_bitbucketgit_server:
+    service_id: bitbucketgit
+    parameters:
+      git_id: d948f40f-ee56-414e-994d-f2cba31878b3
+      repo_name: '{{form.bitbucketgit.parameters.ui-repo_name}}'
+      repo_url: '{{form.bitbucketgit.parameters.ui-repo_url}}'
+      type: clone
+      has_issues: false
+      enable_traceability: true
+  umbrella-repo_bitbucketgit_server:
+    service_id: bitbucketgit
+    parameters:
+      git_id: d948f40f-ee56-414e-994d-f2cba31878b3
+      repo_name: '{{form.bitbucketgit.parameters.umbrella-repo_name}}'
+      repo_url: '{{form.bitbucketgit.parameters.umbrella-repo_url}}'
       type: clone
       has_issues: true
       enable_traceability: true

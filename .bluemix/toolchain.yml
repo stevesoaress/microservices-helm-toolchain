@@ -36,27 +36,6 @@ services:
       type: clone
       has_issues: false
       enable_traceability: true
-  catalog-api-build:
-    service_id: pipeline
-    parameters:
-      services:
-        - catalog-api-repo
-      name: 'catalog-api-{{timestamp}}'
-      configuration:
-        content:
-          $ref: ci.pipeline.yml
-          $refType: text
-        env:
-          POLICY_NAME: '[catalog-api] PUBLISH Component Chart Checks'
-          GIT_REPO: catalog-api-repo
-          GIT_BRANCH: master
-          APP_NAME: catalog-api
-          IMAGE_NAME: 'catalog-api-{{timestamp}}'
-          REGISTRY_REGION_ID: '{{form.pipeline.parameters.registry-region}}'
-          REGISTRY_NAMESPACE: '{{form.pipeline.parameters.registry-namespace}}'
-          API_KEY: '{{form.pipeline.parameters.api-key}}'            
-          UMBRELLA_REPO_NAME: '{{form.hostedgit.parameters.umbrella-repo_name}}'
-        execute: true
   orders-api-repo:
     service_id: hostedgit
     parameters:
@@ -65,27 +44,6 @@ services:
       type: clone
       has_issues: false
       enable_traceability: true
-  orders-api-build:
-    service_id: pipeline
-    parameters:
-      services:
-        - orders-api-repo
-      name: 'orders-api-{{timestamp}}'
-      configuration:
-        content:
-          $ref: ci.pipeline.yml
-          $refType: text
-        env:
-          POLICY_NAME: '[orders-api] PUBLISH Component Chart Checks'
-          GIT_REPO: orders-api-repo
-          GIT_BRANCH: master
-          APP_NAME: orders-api
-          IMAGE_NAME: 'orders-api-{{timestamp}}'
-          REGISTRY_REGION_ID: '{{form.pipeline.parameters.registry-region}}'
-          REGISTRY_NAMESPACE: '{{form.pipeline.parameters.registry-namespace}}'
-          API_KEY: '{{form.pipeline.parameters.api-key}}'          
-          UMBRELLA_REPO_NAME: '{{form.hostedgit.parameters.umbrella-repo_name}}'
-        execute: true
   ui-repo:
     service_id: hostedgit
     parameters:
@@ -94,29 +52,6 @@ services:
       type: clone
       has_issues: false
       enable_traceability: true
-  ui-build:
-    service_id: pipeline
-    parameters:
-      services:
-        - ui-repo
-      name: 'ui-{{timestamp}}'
-      ui-pipeline: true
-      configuration:
-        content:
-          $ref: ci.pipeline.yml
-          $refType: text
-        env:
-          POLICY_NAME: '[ui] PUBLISH Component Chart Checks'
-          SAUCE_LABS: test
-          GIT_REPO: ui-repo
-          GIT_BRANCH: master
-          APP_NAME: ui
-          IMAGE_NAME: 'ui-{{timestamp}}'
-          REGISTRY_REGION_ID: '{{form.pipeline.parameters.registry-region}}'
-          REGISTRY_NAMESPACE: '{{form.pipeline.parameters.registry-namespace}}'
-          API_KEY: '{{form.pipeline.parameters.api-key}}'            
-          UMBRELLA_REPO_NAME: '{{form.hostedgit.parameters.umbrella-repo_name}}'
-        execute: true
   umbrella-repo:
     service_id: hostedgit
     parameters:
@@ -125,36 +60,7 @@ services:
       type: clone
       has_issues: true
       enable_traceability: true
-  umbrella-build:
-    service_id: pipeline
-    parameters:
-      services:
-        - umbrella-repo
-        - test
-      name: 'solution-{{timestamp}}'
-      ui-pipeline: true
-      configuration:
-        content:
-          $ref: cd.pipeline.yml
-          $refType: text
-        env:
-          SAUCE_LABS: test
-          GIT_REPO: umbrella-repo
-          GIT_BRANCH: master
-          APP_NAME: '{{form.pipeline.parameters.umbrella-app-name}}'
-          REGISTRY_REGION_ID: '{{form.pipeline.parameters.registry-region}}'
-          REGISTRY_NAMESPACE: '{{form.pipeline.parameters.registry-namespace}}'
-          API_KEY: '{{form.pipeline.parameters.api-key}}'          
-          STAGING_RESOURCE_GROUP: '{{form.pipeline.parameters.staging-resource-group}}'
-          STAGING_REGION_ID: '{{form.pipeline.parameters.staging-region}}'
-          STAGING_CLUSTER_NAME: '{{form.pipeline.parameters.staging-cluster-name}}'
-          STAGING_CLUSTER_NAMESPACE: '{{form.pipeline.parameters.staging-cluster-namespace}}'
-          PROD_RESOURCE_GROUP: '{{form.pipeline.parameters.prod-resource-group}}'
-          PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
-          PROD_CLUSTER_NAME: '{{form.pipeline.parameters.prod-cluster-name}}'
-          PROD_CLUSTER_NAMESPACE: '{{form.pipeline.parameters.prod-cluster-namespace}}'
-          POLICY_NAME_FORMAT: '[%s] %s Deployment Checks'
-        execute: false
+  
   alerting:
     service_id: pagerduty
   dra:
@@ -193,15 +99,6 @@ services:
       description: Manage clusters
       additional-properties:  
 form:
-  pipeline:
-    parameters:
-      staging-space: staging
-      staging-cluster-namespace: staging
-      prod-space: prod
-      prod-cluster-namespace: prod
-      umbrella-app-name: '{{services.umbrella-repo.parameters.repo_name}}'
-    schema:
-      $ref: deploy.json
   hostedgit:
     parameters:
       catalog-api-repo_name: 'catalog-api-{{timestamp}}'

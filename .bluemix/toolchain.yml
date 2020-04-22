@@ -27,37 +27,37 @@ services:
   catalog-api-repo:
     service_id: github
     parameters:
-      repo_name: '{{form.hostedgit.parameters.catalog-api-repo_name}}'
-      repo_url: '{{form.hostedgit.parameters.catalog-api-repo_url}}'
+      repo_name: '{{form.github.parameters.catalog-api-repo_name}}'
+      repo_url: '{{form.github.parameters.catalog-api-repo_url}}'
       type: clone
       has_issues: false
       enable_traceability: true
   orders-api-repo:
     service_id: github
     parameters:
-      repo_name: '{{form.hostedgit.parameters.orders-api-repo_name}}'
-      repo_url: '{{form.hostedgit.parameters.orders-api-repo_url}}'
+      repo_name: '{{form.github.parameters.orders-api-repo_name}}'
+      repo_url: '{{form.github.parameters.orders-api-repo_url}}'
       type: clone
       has_issues: false
       enable_traceability: true
   ui-repo:
     service_id: github
     parameters:
-      repo_name: '{{form.hostedgit.parameters.ui-repo_name}}'
-      repo_url: '{{form.hostedgit.parameters.ui-repo_url}}'
+      repo_name: '{{form.github.parameters.ui-repo_name}}'
+      repo_url: '{{form.github.parameters.ui-repo_url}}'
       type: clone
       has_issues: false
       enable_traceability: true
   umbrella-repo:
     service_id: github
     parameters:
-      repo_name: '{{form.hostedgit.parameters.umbrella-repo_name}}'
-      repo_url: '{{form.hostedgit.parameters.umbrella-repo_url}}'
+      repo_name: '{{form.github.parameters.umbrella-repo_name}}'
+      repo_url: '{{form.github.parameters.umbrella-repo_url}}'
       type: clone
       has_issues: true
       enable_traceability: true
 form:
-  hostedgit:
+  github:
     parameters:
       catalog-api-repo_name: 'catalog-api-{{timestamp}}'
       catalog-api-repo_url: 'https://github.com/open-toolchain/Microservices_CatalogAPI_helm'

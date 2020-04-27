@@ -175,7 +175,7 @@ services:
   catalog-api-repo_bitbucketgit_server:
     service_id: bitbucketgit
     parameters:
-      git_id: 30108300-8dd3-4ffe-8204-454d404add46
+      git_id: a7bd1e6b-9a6f-43c2-9934-f42853a99fa5
       repo_name: '{{form.bitbucketgit.parameters.catalog-api-repo_name}}'
       repo_url: '{{form.bitbucketgit.parameters.catalog-api-repo_url}}'
       type: clone
@@ -184,7 +184,7 @@ services:
   orders-api-repo_bitbucketgit_server:
     service_id: bitbucketgit
     parameters:
-      git_id: 30108300-8dd3-4ffe-8204-454d404add46
+      git_id: a7bd1e6b-9a6f-43c2-9934-f42853a99fa5
       repo_name: '{{form.bitbucketgit.parameters.orders-api-repo_name}}'
       repo_url: '{{form.bitbucketgit.parameters.orders-api-repo_url}}'
       type: clone
@@ -193,7 +193,7 @@ services:
   ui-repo_bitbucketgit_server:
     service_id: bitbucketgit
     parameters:
-      git_id: 30108300-8dd3-4ffe-8204-454d404add46
+      git_id: a7bd1e6b-9a6f-43c2-9934-f42853a99fa5
       repo_name: '{{form.bitbucketgit.parameters.ui-repo_name}}'
       repo_url: '{{form.bitbucketgit.parameters.ui-repo_url}}'
       type: clone
@@ -202,7 +202,7 @@ services:
   umbrella-repo_bitbucketgit_server:
     service_id: bitbucketgit
     parameters:
-      git_id: 30108300-8dd3-4ffe-8204-454d404add46
+      git_id: a7bd1e6b-9a6f-43c2-9934-f42853a99fa5
       repo_name: '{{form.bitbucketgit.parameters.umbrella-repo_name}}'
       repo_url: '{{form.bitbucketgit.parameters.umbrella-repo_url}}'
       type: clone

@@ -10,7 +10,6 @@ template:
   icon: icon.svg
   required:
     - catalog-api-repo_github
-    - orders-api-repo_github
     - ui-repo_github
     - umbrella-repo_github
     - gitlab-charts-repo_github
@@ -50,14 +49,6 @@ services:
     parameters:
       repo_name: '{{form.githubconsolidated.parameters.test-repo_name}}'
       repo_url: '{{form.githubconsolidated.parameters.test-repo_url}}'
-      type: clone
-      has_issues: false
-      enable_traceability: true
-  orders-api-repo_github:
-    service_id: githubconsolidated
-    parameters:
-      repo_name: '{{form.githubconsolidated.parameters.orders-api-repo_name}}'
-      repo_url: '{{form.githubconsolidated.parameters.orders-api-repo_url}}'
       type: clone
       has_issues: false
       enable_traceability: true

@@ -13,6 +13,7 @@ template:
     - orders-api-repo_github
     - ui-repo_github
     - umbrella-repo_github
+    - gitlab-charts-repo_github
     
     - catalog-api-repo_gitlab
     - orders-api-repo_gitlab
@@ -44,7 +45,22 @@ toolchain:
       $ref: "#/messages/template.gettingStarted"
   name: 'helm-microservices-{{timestamp}}'
 services:
-  catalog-api-repo_github:
+  gitlab-charts-repo_github:
+      service_id: githubconsolidated
+    parameters:
+      repo_name: '{{form.githubconsolidated.parameters.test-repo_name}}'
+      repo_url: '{{form.githubconsolidated.parameters.test-repo_url}}'
+      type: clone
+      has_issues: false
+      enable_traceability: true
+  orders-api-repo_github:
+    service_id: githubconsolidated
+    parameters:
+      repo_name: '{{form.githubconsolidated.parameters.orders-api-repo_name}}'
+      repo_url: '{{form.githubconsolidated.parameters.orders-api-repo_url}}'
+      type: clone
+      has_issues: false
+      enable_traceability: true
     service_id: githubconsolidated
     parameters:
       repo_name: '{{form.githubconsolidated.parameters.catalog-api-repo_name}}'
@@ -219,6 +235,8 @@ form:
       ui-repo_url: 'https://github.com/open-toolchain/Microservices_UI_helm'
       umbrella-repo_name: 'solution-{{timestamp}}'
       umbrella-repo_url: 'https://github.com/open-toolchain/Microservices_Solution_helm'
+      test-repo_name: gitlab-charts
+      test-repo_url: https://gitlab.com/gitlab-org/charts/gitlab
     schema:
       $ref: repos.json
   gitlab:
@@ -231,6 +249,8 @@ form:
       ui-repo_url: 'https://github.com/open-toolchain/Microservices_UI_helm'
       umbrella-repo_name: 'solution-{{timestamp}}'
       umbrella-repo_url: 'https://github.com/open-toolchain/Microservices_Solution_helm'
+      test-repo_name: gitlab-charts
+      test-repo_url: https://gitlab.com/gitlab-org/charts/gitlab
     schema:
       $ref: repos.json
   bitbucketgit:
@@ -243,6 +263,8 @@ form:
       ui-repo_url: 'https://github.com/open-toolchain/Microservices_UI_helm'
       umbrella-repo_name: 'solution-{{timestamp}}'
       umbrella-repo_url: 'https://github.com/open-toolchain/Microservices_Solution_helm'
+      test-repo_name: gitlab-charts
+      test-repo_url: https://gitlab.com/gitlab-org/charts/gitlab
     schema:
       $ref: repos.json
   hostedgit:
@@ -255,6 +277,8 @@ form:
       ui-repo_url: 'https://github.com/open-toolchain/Microservices_UI_helm'
       umbrella-repo_name: 'solution-{{timestamp}}'
       umbrella-repo_url: 'https://github.com/open-toolchain/Microservices_Solution_helm'
+      test-repo_name: gitlab-charts
+      test-repo_url: https://gitlab.com/gitlab-org/charts/gitlab
     schema:
       $ref: repos.json
 

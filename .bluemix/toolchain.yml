@@ -61,21 +61,6 @@ services:
       type: clone
       has_issues: false
       enable_traceability: true
-    service_id: githubconsolidated
-    parameters:
-      repo_name: '{{form.githubconsolidated.parameters.catalog-api-repo_name}}'
-      repo_url: '{{form.githubconsolidated.parameters.catalog-api-repo_url}}'
-      type: clone
-      has_issues: false
-      enable_traceability: true
-  orders-api-repo_github:
-    service_id: githubconsolidated
-    parameters:
-      repo_name: '{{form.githubconsolidated.parameters.orders-api-repo_name}}'
-      repo_url: '{{form.githubconsolidated.parameters.orders-api-repo_url}}'
-      type: clone
-      has_issues: false
-      enable_traceability: true
   ui-repo_github:
     service_id: githubconsolidated
     parameters:

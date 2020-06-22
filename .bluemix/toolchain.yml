@@ -46,7 +46,7 @@ toolchain:
   name: 'helm-microservices-{{timestamp}}'
 services:
   gitlab-charts-repo_github:
-      service_id: githubconsolidated
+    service_id: githubconsolidated
     parameters:
       repo_name: '{{form.githubconsolidated.parameters.test-repo_name}}'
       repo_url: '{{form.githubconsolidated.parameters.test-repo_url}}'

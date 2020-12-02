@@ -182,6 +182,7 @@ services:
       type: clone
       has_issues: false
       enable_traceability: true
+      test: '/wefwe'
   ui-repo_bitbucketgit_server:
     service_id: bitbucketgit
     parameters:
